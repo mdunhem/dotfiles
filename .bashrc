@@ -16,9 +16,8 @@ for i in ~/completion/*; do
     . $i
 done
 
-# Set PS1 to show git branch if available
+# Set git prompt to show dirty status
 GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 # Set private variables
 if [ -f $HOME/.bash_exports ]; then
