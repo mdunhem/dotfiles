@@ -1,0 +1,36 @@
+#!/bin/bash
+INSTALLDIR=${1:-$HOME}
+
+if [ "$1" == "-h" ] || [ "$1" == "-?" ] || [ "$1" == "--help" ]; then
+    echo "$0 <dotfiles install dir>"
+    echo "Existing dotfiles will be moved to <filename>.old"
+    exit
+fi
+
+echo "Installing bash configs..."
+for i in .bash .bashrc completion
+do
+    rm -rf $INSTALLDIR/$i.old 2> /dev/null
+    mv $INSTALLDIR/$i $INSTALLDIR/$i.old 2> /dev/null
+    ln -s $PWD/$i $INSTALLDIR/$i 2> /dev/null
+done;
+echo
+
+echo "Installing git configs..."
+cp $PWD/.gitconfig $INSTALLDIR/.gitconfig
+echo
+
+echo -e "Initializing submodules..."
+git submodule init && git submodule update
+echo
+
+echo "Installing vim configs..."
+for i in .vim .vimrc
+do
+    rm -rf $INSTALLDIR/$i.old 2> /dev/null
+    mv -f $INSTALLDIR/$i $INSTALLDIR/$i.old 2> /dev/null
+    ln -s $PWD/$i $INSTALLDIR/$i 2> /dev/null
+done;
+echo
+
+echo "Done. Conflicting existing dotfiles were moved to <file>.old"
