@@ -7,7 +7,7 @@ case $- in
 esac
 
 # Set variables
-export SSH_ENV=$HOME/.ssh/environment
+export SSH_ENV=~/.ssh/environment
 export EDITOR="vim"
 set -o vi
 
@@ -19,36 +19,14 @@ done
 # Set git prompt to show dirty status
 GIT_PS1_SHOWDIRTYSTATE=true
 
-# Set private variables
-if [ -f $HOME/.bash_exports ]; then
-	. $HOME/.bash_exports
-fi
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# custom window settings
-if [ -f $HOME/.bash/.bash_window ]; then
-	. $HOME/.bash/.bash_window
-fi
-
-# custom color settings
-if [ -f $HOME/.bash/.bash_colors ]; then
-	. $HOME/.bash/.bash_colors
-fi
-
-# custom functions
-if [ -f $HOME/.bash/functions ]; then
-	. $HOME/.bash/.bash_functions
-fi
-
-# custom aliases
-if [ -f $HOME/.bash/aliases ]; then
-	. $HOME/.bash/.bash_aliases
-fi
-
-
+# Source custom settings
+for i in ~/.bash/*; do
+	. $i
+done
 
 # vim: set syn=sh :
