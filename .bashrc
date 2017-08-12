@@ -41,19 +41,14 @@ fi
 
 # custom functions
 if [ -f $HOME/.bash/functions ]; then
-	. $HOME/.bash/functions
+	. $HOME/.bash/.bash_functions
 fi
 
 # custom aliases
 if [ -f $HOME/.bash/aliases ]; then
-	. $HOME/.bash/aliases
+	. $HOME/.bash/.bash_aliases
 fi
 
-# Private alias definitions.
-# These are meant to not be added to version control
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
 
 
 # vim: set syn=sh :
