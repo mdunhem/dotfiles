@@ -40,7 +40,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.bash/.dircolors && eval "$(dircolors -b ~/.bash/.dircolors)" || eval "$(dircolors -b)"
-fi
+# enable color support of ls and also add handy aliases - Need to figure out better colors
+#if [ -x /usr/bin/dircolors ]; then
+#    test -r ~/.bash/.dircolors && eval "$(dircolors -b ~/.bash/.dircolors)" || eval "$(dircolors -b)"
+#fi
