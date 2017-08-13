@@ -1,0 +1,98 @@
+#==================== Design ====================#
+#set -g default-terminal "screen-256color"
+
+#======== Variables =========#
+
+# Colors
+color_background=colour234
+color_active=colour135
+color_inactive=colour252
+color_feature=colour4
+color_music=colour164
+active_border_color=colour198
+
+color_grey_light=colour250
+color_feature_dark_fg=colour25
+color_feature_dark_bg=colour240
+color_feature_medium_fg=colour33
+color_feature_medium_bg=colour240
+color_feature_light_fg=colour39
+color_feature_light_bg=colour240
+
+color_pane_border_bg=colour235
+color_pane_border_fg=colour238
+color_pane_active_border_bg=colour236
+color_pane_active_border_bg=colour51
+
+# Separators
+separator_left_bold="◀"
+separator_left_thin="❮"
+separator_right_bold="▶"
+separator_right_thin="❯"
+
+# Status bar values
+sb_session_name="#[bg=$color_feature_dark_bg,fg=$color_feature_dark_fg,bold] #S #[bg=$color_feature_dark_bg,fg=$color_grey_light,nobold]$separator_right_thin"
+sb_date="#[bg=$color_feature_light_bg,fg=$color_grey_light]$separator_left_thin#[bg=$color_feature_light_bg,fg=$color_feature_light_fg] %R %d %b"
+sb_host="#[bg=$color_feature_medium_bg,fg=$color_grey_light]$separator_left_thin#[bg=$color_feature_medium_bg,fg=$color_feature_medium_fg,bold] #h "
+
+#============================#
+
+#======== Status Bar ========#
+
+# Sizing
+set -g status-left-length 32
+set -g status-right-length 150
+set -g status-interval 5
+
+# Status Bar Colors
+set -g status-fg $color_active
+set -g status-bg default
+set -g status-attr default
+
+# Status Bar Display
+set -g status-left $sb_session_name
+set -g status-right $sb_date' '$sb_date
+
+#============================#
+
+#========= Window ===========#
+
+# default window title colors
+setw -g window-status-fg $color_inactive
+setw -g window-status-bg default
+setw -g window-status-format "#I #W"
+setw -g window-status-attr dim
+
+# active window title colors
+setw -g window-status-current-fg $color_active
+setw -g window-status-current-bg default
+setw -g window-status-current-format "#[bold]#I #W"
+setw -g window-status-current-attr bright
+
+# clock
+setw -g clock-mode-colour $color_active
+
+#============================#
+
+#=========== Pane ===========#
+
+# pane border
+set -g pane-border-bg $color_pane_border_bg
+set -g pane-border-fg $color_pane_border_fg
+set -g pane-active-border-bg $color_pane_active_border_bg
+set -g pane-active-border-fg $color_pane_active_border_fg
+
+# pane number display
+set -g display-panes-active-colour $color_active
+set -g display-panes-colour $color_inactive
+
+#============================#
+
+#========= Message ==========#
+
+# message text
+set -g message-bg default
+set -g message-fg $color_active
+
+
+#============================#

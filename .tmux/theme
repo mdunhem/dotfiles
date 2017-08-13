@@ -1,0 +1,84 @@
+#==================== Design ====================#
+set -g default-terminal "screen-256color"
+
+#======== Variables =========#
+
+# Colors
+status_bar_bg=colour240
+status_bar_fg=colour252
+
+window_bg=default
+window_fg=colour252
+window_current_fg=colour75
+window_current_bg=default
+
+pane_border_fg=colour238
+pane_border_bg=colour235
+pane_border_active_fg=colour51
+pane_border_active_bg=colour236
+
+message_bg=colour234
+message_fg=colour252
+
+# Separators
+separator_left_bold="◀"
+separator_left_thin="❮"
+separator_right_bold="▶"
+separator_right_thin="❯"
+
+# Status bar values
+sb_session_name="#[bg=$status_bar_bg,fg=$status_bar_fg,bold] #S $separator_right_thin"
+sb_date="#[bg=$status_bar_bg,fg=$status_bar_fg]$separator_left_thin %R %d %b"
+sb_host="#[bg=$status_bar_bg,fg=$status_bar_fg]$separator_left_thin #h "
+
+#======== Status Bar ========#
+
+# Sizing
+set -g status-left-length 32
+set -g status-right-length 150
+set -g status-interval 5
+
+# Status Bar Colors
+set -g status-fg $status_bar_fg
+set -g status-bg $status_bar_bg
+set -g status-attr default
+
+# Status Bar Display
+set -g status-left $sb_session_name
+set -g status-right $sb_date' '$sb_host
+
+#========= Window ===========#
+
+# default window title colors
+setw -g window-status-fg $window_fg
+setw -g window-status-bg $window_bg 
+setw -g window-status-format "#I #W"
+setw -g window-status-attr dim
+
+# active window title colors
+setw -g window-status-current-fg $window_current_fg
+setw -g window-status-current-bg $window_current_bg 
+setw -g window-status-current-format "#[bold]#I #W"
+setw -g window-status-current-attr bright
+
+# clock
+setw -g clock-mode-colour $status_bar_fg
+
+#=========== Pane ===========#
+
+# pane border
+set -g pane-border-bg $pane_border_bg
+set -g pane-border-fg $pane_border_fg
+set -g pane-active-border-bg $pane_border_active_bg
+set -g pane-active-border-fg $pane_border_active_fg
+
+# pane number display
+set -g display-panes-active-colour $pane_border_active_fg
+set -g display-panes-colour $pane_border_fg
+
+#========= Message ==========#
+
+# message text
+set -g message-bg default
+set -g message-fg $color_active
+
