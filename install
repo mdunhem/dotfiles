@@ -33,4 +33,13 @@ do
 done;
 echo
 
+echo "Installing tmux configs..."
+for i in .tmux .tmux.conf
+do
+    rm -rf $INSTALLDIR/$i.old 2> /dev/null
+    mv -f $INSTALLDIR/$i $INSTALLDIR/$i.old 2> /dev/null
+    ln -s $PWD/$i $INSTALLDIR/$i 2> /dev/null
+done;
+echo
+
 echo "Done. Conflicting existing dotfiles were moved to <file>.old"
