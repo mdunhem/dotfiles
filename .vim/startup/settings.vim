@@ -27,6 +27,10 @@ set backspace=2
 set number
 set nocompatible
 
+" This lets the copy command go to the native app
+" which helps with Windows at least....
+set clipboard=unnamed
+
 " Hack to make sql in php hilighting suck less
 let sql_type_default = 'sqlanywhere'
 
