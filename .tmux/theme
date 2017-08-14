@@ -82,5 +82,5 @@ set -g display-panes-colour $pane_border_fg
 
 # message text
 set -g message-bg default
-set -g message-fg $color_active
+set -g message-fg $window_current_fg
 
