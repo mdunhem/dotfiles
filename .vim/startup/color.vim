@@ -1,8 +1,8 @@
 " Color Settings
+"color molokai
+"color peaksea
+"color skittles_dark
+color tango
+"color wombat
 "color wombat256
 "color xterm16
-"color railscasts
-color molokai
-"color skittles_dark
-"color skittles_berry
-"color dracula
