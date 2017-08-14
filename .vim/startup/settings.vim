@@ -62,39 +62,6 @@ if version > 720
 	set undodir=~/vimundo/
 endif
 
-let mapleader='\'
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
-let g:vdebug_options= {
-	\    "port" : 9000,
-	\    "server" : 'localhost',
-	\    "timeout" : 20,
-	\    "on_close" : 'detach',
-	\    "break_on_open" : 1,
-	\    "ide_key" : '',
-	\    "path_maps" : {},
-	\    "debug_window_level" : 0,
-	\    "debug_file_level" : 0,
-	\    "debug_file" : "",
-	\    "watch_window_style" : 'compact',
-	\    "marker_default" : '*',
-	\    "marker_closed_tree" : '+',
-	\    "marker_open_tree" : '━',
-	\    "continuous_mode" : 0
-\}
-
-
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 0
-
-let g:phpcomplete_parse_docblock_comments = 1
-
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_color_change_percent = 10
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0
