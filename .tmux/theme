@@ -6,6 +6,7 @@ set -g default-terminal "screen-256color"
 # Colors
 status_bar_bg=colour240
 status_bar_fg=colour252
+status_bar_battery=colour75
 
 window_bg=default
 window_fg=colour252
@@ -30,6 +31,7 @@ separator_right_thin="❯"
 sb_session_name="#[bg=$status_bar_bg,fg=$status_bar_fg,bold] #S $separator_right_thin"
 sb_date="#[bg=$status_bar_bg,fg=$status_bar_fg]$separator_left_thin %R %d %b"
 sb_host="#[bg=$status_bar_bg,fg=$status_bar_fg]$separator_left_thin #h "
+sb_battery="#[bg=$status_bar_bg,fg=$status_bar_battery]#(~/.tmux/bin/battery Discharging; ~/.tmux/bin/battery Charging)"
 
 #======== Status Bar ========#
 
@@ -45,7 +47,7 @@ set -g status-attr default
 
 # Status Bar Display
 set -g status-left $sb_session_name
-set -g status-right $sb_date' '$sb_host
+set -g status-right $sb_battery' '$sb_date' '$sb_host
 
 #========= Window ===========#
 
