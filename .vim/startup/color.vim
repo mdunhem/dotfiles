@@ -5,3 +5,4 @@
 color molokai
 "color skittles_dark
 "color skittles_berry
+"color dracula
