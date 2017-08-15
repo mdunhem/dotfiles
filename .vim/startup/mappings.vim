@@ -16,6 +16,10 @@ vno <right> <Nop>
 vno <up> <Nop>
 
 "============== Custom Mappings ===============
+
+" Shortcut to save
+nmap <leader>w :w<cr>
+
 " general mapping
 nmap <C-Tab> :tabnext<CR>
 nmap <C-S-Tab> :tabprevious<CR>
@@ -55,8 +59,6 @@ imap <leader>" ""<ESC>i
 imap <leader>( ()<ESC>i
 imap <leader>[ []<ESC>i
 
-" Shortcut to save
-nmap <leader>, :w<cr>
 """""" Custom plugin mappings """""
 
 " NERDTree
