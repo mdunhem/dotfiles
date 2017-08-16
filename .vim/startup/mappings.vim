@@ -56,8 +56,8 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 "quick pairs
 imap <leader>' ''<ESC>i
 imap <leader>" ""<ESC>i
-imap <leader>( ()<ESC>i
-imap <leader>[ []<ESC>i
+imap <leader>( (  )<ESC>hi
+imap <leader>{ {  }<ESC>hi
 
 """""" Custom plugin mappings """""
 
